@@ -1,0 +1,7 @@
+Kunden = Uftragsraport = tätigkeits art 1 bis mehrere 
+			(sizung, suport, entwiklung,)
+			Hinweise was gethan
+			Text bausteine zu den arten
+			History was wie lange + = vom auftragsgeber bestätigung
+			1km = 1.5 fr
+
