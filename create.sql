@@ -1,6 +1,6 @@
-create database orderRapport;
+create database orderRapportManagement;
 
-use orderRapport;
+use orderRapportManagement;
 
 create table companies(
 	id int not null auto_increment,
@@ -74,6 +74,56 @@ create table travelingCosts(
 
 create table dates(
 	id int not null auto_increment,
-	'date' date
+	workingDay date,
+    primary key(id)
 );
 
+create table orderRapport(
+	id int not null auto_increment,
+	title varchar(32),
+	signature mediumblob,
+	datesFk int not null,
+	travelingCostsFk int not null,
+	customerFk int not null,
+	primary key(id),
+	foreign key(datesFk) references dates(id),
+	foreign key(travelingCostsFk) references travelingCosts(id),
+	foreign key(customerFk) references customer(id)
+);
+
+create table orderRapportWorker(
+	id int not null auto_increment,
+	orderRapportFk int not null,
+	workerFk int not null auto_increment,
+    primary key(id),
+	foreign key(orderRapportFk) references orderRapport(id),
+	foreign key(workerFk) references worker(id)
+);
+
+create table typesOfActivity(
+	id int not null auto_increment,
+	type varchar(64),
+	primary key(id)
+);
+
+create table textModules(
+	id int not null auto_increment,
+	buildingBlock text,
+	typesOfActivityFk int not null,
+	primary key(id),
+	foreign key(typesOfActivityFk) references typesOfActivity(id)
+);
+
+create table activities(
+	id int not null auto_increment,
+	note text,
+	costs int,
+	totalTime varchar(32),
+	fromTime Time,
+	toTime Time,
+	typesOfActivityFk int not null,
+	orderRapportFk int not null,
+	primary key(id),
+	foreign key(typesOfActivityFk) references typesOfActivity(id),
+	foreign key(orderRapportFk) references orderRapport(id)
+);
