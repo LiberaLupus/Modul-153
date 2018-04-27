@@ -96,8 +96,8 @@ create table orderRapportWorker(
 	orderRapportFk int not null,
 	workerFk int not null auto_increment,
     primary key(id),
-	foreign key(orderRapportFk) references orderRapport(id),
-	foreign key(workerFk) references worker(id)
+	foreign key(orderRapportFk) references orderRapport(id) on delete cascade,
+	foreign key(workerFk) references worker(id) on delete cascade
 );
 
 create table typesOfActivity(
@@ -111,7 +111,7 @@ create table textModules(
 	buildingBlock text,
 	typesOfActivityFk int not null,
 	primary key(id),
-	foreign key(typesOfActivityFk) references typesOfActivity(id)
+	foreign key(typesOfActivityFk) references typesOfActivity(id) on delete cascade
 );
 
 create table activities(
@@ -125,5 +125,5 @@ create table activities(
 	orderRapportFk int not null,
 	primary key(id),
 	foreign key(typesOfActivityFk) references typesOfActivity(id),
-	foreign key(orderRapportFk) references orderRapport(id)
+	foreign key(orderRapportFk) references orderRapport(id) on delete cascade
 );
