@@ -1,13 +1,9 @@
 package sample;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.sql.*;
 
 public class InsertImageTest {
 
@@ -60,4 +56,23 @@ public class InsertImageTest {
         }
 
     }
+
+    public BufferedInputStream readeImage(String SQLQuery, String Attribut){
+        Connection connection = getConnection();
+        try{
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(SQLQuery);
+rs.next();
+            java.sql.Blob blob = rs.getBlob(Attribut);
+            InputStream in = blob.getBinaryStream();
+            BufferedInputStream image = new BufferedInputStream(in);
+            rs.close();
+            stmt.close();
+            return  image;
+        }catch (Exception ex){
+            System.out.println(ex);
+            return null;
+        }
+    }
+    
 }
