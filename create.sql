@@ -31,12 +31,20 @@ create table streetNrs(
 	streetNr varchar(16),
 	primary key(id)
 );
+
+create table typeOfPerson(
+	id int not null auto_increment,
+	type varchar(64),
+	primary key(id)
+);
 	
-create table customer(
+create table people(
 	id int not null auto_increment,
 	firstname varchar(64),
 	lastname varchar(64),
-	primary key(id)
+	typeOfPersonFk int not null,
+	primary key(id),
+	foreign key(typeOfPersonFk) references typeOfPerson(id)
 );
 
 create table contact(
@@ -55,14 +63,7 @@ create table contact(
 	foreign key(zipFk) references zip(id),
 	foreign key(streetNamesFk) references streetNames(id),
 	foreign key(streetNrsFk) references streetNrs(id),
-	foreign key(customerFk) references customer(id)
-);
-
-create table worker(
-	id int not null auto_increment,
-	firstname varchar(64),
-	lastname varchar(64),
-	primary key(id)
+	foreign key(customerFk) references people(id)
 );
 
 create table travelingCosts(
@@ -85,19 +86,12 @@ create table orderRapport(
 	datesFk int not null,
 	travelingCostsFk int not null,
 	customerFk int not null,
+    workerFk int not null,
 	primary key(id),
 	foreign key(datesFk) references dates(id),
 	foreign key(travelingCostsFk) references travelingCosts(id),
-	foreign key(customerFk) references customer(id)
-);
-
-create table orderRapportWorker(
-	id int not null auto_increment,
-	orderRapportFk int not null,
-	workerFk int not null auto_increment,
-    primary key(id),
-	foreign key(orderRapportFk) references orderRapport(id) on delete cascade,
-	foreign key(workerFk) references worker(id) on delete cascade
+	foreign key(customerFk) references people(id),
+    foreign key(workerFk) references people(id)
 );
 
 create table typesOfActivity(

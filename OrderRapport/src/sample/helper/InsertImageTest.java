@@ -1,7 +1,5 @@
-package sample;
+package sample.helper;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.*;
 
@@ -74,5 +72,5 @@ rs.next();
             return null;
         }
     }
-    
+
 }
