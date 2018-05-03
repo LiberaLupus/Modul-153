@@ -104,7 +104,7 @@ public class DBManager {
     }
 
 
-    public void Insert1(String SQLQuery,String Value){
+    public void InsertString(String SQLQuery,String Value){
         try{
             PreparedStatement stmt = connection.conn.prepareStatement(SQLQuery);
             stmt.setString(1, Value);

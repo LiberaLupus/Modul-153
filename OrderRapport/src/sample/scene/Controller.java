@@ -4,8 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import sample.helper.DBManager;
 
 import javax.swing.*;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Controller {
@@ -30,7 +35,8 @@ public class Controller {
             btnNewDate, btnRemoveDate,
             btnNewTravelingCosts, btnRemoveTravelingCosts,
             btnNewActivity, btnRemoveActivity,
-            btnSelectSignature;
+            btnSelectSignature,
+            btnSaveOrderrapport;
 
     @FXML
     ComboBox cbTitle, cbCustomer, cbWorker, cdDate, cdTravelingCosts, cbRemoveActivity;
@@ -38,21 +44,23 @@ public class Controller {
     @FXML
     TableColumn tcId, tcNote, tcCosts, tcTotalTime, tcFrom, tcTo, tcType;
 
+    public Map<String, String> OrderRapport = new HashMap<String, String>();
+
     @FXML
     protected void btnNewOrderraportOA(ActionEvent event) {
 
-        JTextField name = new JTextField();
-        Object[] message = {"Title", name};
+        JTextField title = new JTextField();
+        Object[] message = {"Title", title};
 
         JOptionPane pane = new JOptionPane( message,
                 JOptionPane.PLAIN_MESSAGE,
                 JOptionPane.DEFAULT_OPTION);
-
         pane.createDialog(null, "Orderraport Title").setVisible(true);
 
         if (valueSave() == 0){
-            //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
-            System.out.println("Eingabe: " + name.getText());
+            cbTitle.getItems().add(title.getText());
+            OrderRapport.put("Title", title.getText());
+            cbTitle.setValue(title.getText());
         }
 
     }
@@ -62,28 +70,36 @@ public class Controller {
 
     }
 
+
+
     @FXML
-    protected void btnNewCustomerOA(ActionEvent event) {
+    protected void btnNewCustomerOA(ActionEvent event) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
+        DBManager DBHelper = new DBManager();
 
         JTextField firstname = new JTextField();
         JTextField lastname = new JTextField();
         JTextField tel = new JTextField();
         JTextField email = new JTextField();
 
-        final String labels[] = { "","A", "B", "C", "D", "E" };
+        final String labels[] = DBHelper.Select02("SELECT * FROM companies;", "company").toArray(new String[0]);
         JComboBox CBcompany = new JComboBox(labels);
+        CBcompany.setSelectedItem("");
         JTextField TFcompany = new JTextField();
 
         JComboBox CBplace = new JComboBox();
+        CBplace.setSelectedItem("");
         JTextField TFplace = new JTextField();
 
         JComboBox CBzip = new JComboBox();
+        CBzip.setSelectedItem("");
         JTextField TFzip = new JTextField();
 
         JComboBox CBstreetName = new JComboBox();
+        CBstreetName.setSelectedItem("");
         JTextField TFstreetName = new JTextField();
 
         JComboBox CBstreetNr = new JComboBox();
+        CBstreetNr.setSelectedItem("");
         JTextField TFstreetNr = new JTextField();
 
 
@@ -105,8 +121,44 @@ public class Controller {
         pane.createDialog(null, "Customer").setVisible(true);
 
         if (valueSave() == 0){
-            System.out.print(CBcompany.getSelectedItem());
-            //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+
+            cbCustomer.getItems().add(firstname.getText()+ " " + lastname.getText());
+            cbCustomer.setValue(firstname.getText()+ " " + lastname.getText());
+
+            OrderRapport.put("Firstname", firstname.getText());
+            OrderRapport.put("Lastname", lastname.getText());
+            OrderRapport.put("Tel", tel.getText());
+            OrderRapport.put("Email", email.getText());
+
+            if(String.valueOf(CBcompany.getSelectedItem()) == ""){
+               OrderRapport.put("Company", TFcompany.getText());
+            }else {
+               OrderRapport.put("Company", String.valueOf(CBcompany.getSelectedItem()));
+            }
+
+            if(String.valueOf(CBcompany.getSelectedItem()) == ""){
+                OrderRapport.put("Place", TFplace.getText());
+            }else {
+                OrderRapport.put("Place", String.valueOf(CBplace.getSelectedItem()));
+            }
+
+            if(String.valueOf(CBcompany.getSelectedItem()) == ""){
+                OrderRapport.put("ZIP", TFzip.getText());
+            }else {
+                OrderRapport.put("ZIP", String.valueOf(CBzip.getSelectedItem()));
+            }
+
+            if(String.valueOf(CBcompany.getSelectedItem()) == ""){
+                OrderRapport.put("Streetname", TFstreetName.getText());
+            }else {
+                OrderRapport.put("Streetname", String.valueOf(CBstreetName.getSelectedItem()));
+            }
+
+            if(String.valueOf(CBcompany.getSelectedItem()) == ""){
+                OrderRapport.put("StreetNr", TFstreetNr.getText());
+            }else {
+                OrderRapport.put("StreetNr", String.valueOf(CBstreetNr.getSelectedItem()));
+            }
         }
     }
 
@@ -114,6 +166,8 @@ public class Controller {
     protected void btnRemoveCustomerOA(ActionEvent event){
 
     }
+
+
 
     @FXML
     protected void btnNewWorkerOA(ActionEvent event) {
@@ -140,6 +194,8 @@ public class Controller {
     protected void btnRemoveWorkerOA(ActionEvent event){
 
     }
+
+
 
     @FXML
     protected void btnNewDateOA(ActionEvent event) {
@@ -169,6 +225,8 @@ public class Controller {
 
     }
 
+
+
     @FXML
     protected void btnNewTravelingCostsOA(ActionEvent event) {
         JTextField km = new JTextField();
@@ -187,6 +245,8 @@ public class Controller {
         }
     }
 
+
+
     @FXML
     protected void btnRemoveTravelingCostsOA(ActionEvent event){
 
@@ -196,6 +256,8 @@ public class Controller {
     protected void btnRemoveActivityOA(ActionEvent event) {
 
     }
+
+
 
     @FXML
     protected void btnNewActivityOA(ActionEvent event) {
@@ -211,6 +273,14 @@ public class Controller {
         IVBild.setImage(img);
         */
     }
+
+
+
+    @FXML
+    protected void btnSaveOrderrapportOA(ActionEvent event) {
+
+    }
+
 
     @FXML
     public void initialize(){
