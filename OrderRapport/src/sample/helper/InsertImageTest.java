@@ -60,7 +60,7 @@ public class InsertImageTest {
         try{
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(SQLQuery);
-rs.next();
+            rs.next();
             java.sql.Blob blob = rs.getBlob(Attribut);
             InputStream in = blob.getBinaryStream();
             BufferedInputStream image = new BufferedInputStream(in);

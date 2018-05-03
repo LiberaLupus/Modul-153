@@ -6,10 +6,13 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import javax.swing.*;
-import java.util.List;
 
 
 public class Controller {
+
+    public Controller(){
+        int IdOrderRapport;
+    }
 
     @FXML
     Label lbImagename;
@@ -21,7 +24,13 @@ public class Controller {
     ImageView ivSignature;
 
     @FXML
-    Button btnNewOrderraport, btnNewCustomer, btnNewWorker, btnNewDate, btnNewTravelingCosts, btnRemoveActivity, btnNewActivity, btnSelectSignature;
+    Button  btnNewOrderraport, btnRemoveOrderraport,
+            btnNewCustomer, btnRemoveCustomer,
+            btnNewWorker, btnRemoveWorker,
+            btnNewDate, btnRemoveDate,
+            btnNewTravelingCosts, btnRemoveTravelingCosts,
+            btnNewActivity, btnRemoveActivity,
+            btnSelectSignature;
 
     @FXML
     ComboBox cbTitle, cbCustomer, cbWorker, cdDate, cdTravelingCosts, cbRemoveActivity;
@@ -45,6 +54,11 @@ public class Controller {
             //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
             System.out.println("Eingabe: " + name.getText());
         }
+
+    }
+
+    @FXML
+    protected void btnRemoveOrderraportOA(ActionEvent event) {
 
     }
 
@@ -97,6 +111,11 @@ public class Controller {
     }
 
     @FXML
+    protected void btnRemoveCustomerOA(ActionEvent event){
+
+    }
+
+    @FXML
     protected void btnNewWorkerOA(ActionEvent event) {
 
         JTextField firstname = new JTextField();
@@ -115,6 +134,11 @@ public class Controller {
         if (valueSave() == 0){
             //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
         }
+    }
+
+    @FXML
+    protected void btnRemoveWorkerOA(ActionEvent event){
+
     }
 
     @FXML
@@ -141,6 +165,11 @@ public class Controller {
     }
 
     @FXML
+    protected void btnRemoveDateOA(ActionEvent event){
+
+    }
+
+    @FXML
     protected void btnNewTravelingCostsOA(ActionEvent event) {
         JTextField km = new JTextField();
 
@@ -156,6 +185,11 @@ public class Controller {
         if (valueSave() == 0){
             //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
         }
+    }
+
+    @FXML
+    protected void btnRemoveTravelingCostsOA(ActionEvent event){
+
     }
 
     @FXML

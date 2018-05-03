@@ -70,19 +70,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/scene/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
+            <state relative-caret-position="884">
+              <caret line="169" column="5" lean-forward="true" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#224#225#0" expanded="true" />
+                <element signature="e#258#259#0" expanded="true" />
                 <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
                 <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
                 <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
                 <element signature="method#btnNewDateOA#0;class#Controller#0" />
                 <element signature="method#btnNewTravelingCostsOA#0;class#Controller#0" />
                 <element signature="method#valueSave#0;class#Controller#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBConnectionSingleton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/helper/DBConnectionSingleton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/helper/DBManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="13" column="62" lean-forward="true" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+              <folding>
+                <element signature="method#ImageInsert#0;class#DBManager#0" />
+                <element signature="method#SelectImage#0;class#DBManager#0" />
+                <element signature="method#Select01#0;class#DBManager#0" />
+                <element signature="method#Select02#0;class#DBManager#0" />
+                <element signature="method#Insert1#0;class#DBManager#0" />
+                <element signature="method#Insert2#0;class#DBManager#0" />
+                <element signature="method#Delete#0;class#DBManager#0" />
+                <element signature="method#databaseupdaterichtigfalsch#0;class#DBManager#0" />
               </folding>
             </state>
           </provider>
@@ -116,7 +146,9 @@
         <option value="$PROJECT_DIR$/src/sample/scene/start/Controller.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/sample/helper/InsertImageTest.java" />
         <option value="$PROJECT_DIR$/src/sample/scene/Controller.java" />
+        <option value="$PROJECT_DIR$/src/sample/helper/DBManager.java" />
       </list>
     </option>
   </component>
@@ -160,6 +192,13 @@
               <item name="OrderRapport" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OrderRapport" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OrderRapport" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OrderRapport" type="b2602c69:ProjectViewProjectNode" />
@@ -357,12 +396,12 @@
       <workItem from="1525329772354" duration="955000" />
       <workItem from="1525330787513" duration="243000" />
       <workItem from="1525331142037" duration="5589000" />
-      <workItem from="1525337285132" duration="1019000" />
+      <workItem from="1525337285132" duration="4097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36854000" />
+    <option name="totallyTimeSpent" value="39932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -379,12 +418,12 @@
       <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25606468" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25606468" />
       <window_info anchor="bottom" id="Version Control" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20872483" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20872483" />
       <window_info anchor="right" id="Database" order="10" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -420,13 +459,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/scene/Controller.java</url>
-          <line>53</line>
+          <line>67</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/scene/Controller.java</url>
-          <line>101</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -439,22 +478,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/scene/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
-            <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
-            <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
-            <element signature="method#btnNewDateOA#0;class#Controller#0" />
-            <element signature="method#btnNewTravelingCostsOA#0;class#Controller#0" />
-            <element signature="method#valueSave#0;class#Controller#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -471,6 +494,8 @@
           <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
             <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
             <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
             <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
@@ -504,6 +529,8 @@
           <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
             <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
             <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
             <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
@@ -530,6 +557,8 @@
           <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
             <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
             <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
             <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
@@ -563,6 +592,8 @@
           <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
             <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
             <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
             <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
@@ -596,6 +627,8 @@
           <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
             <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
             <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
             <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
@@ -629,6 +662,8 @@
           <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
             <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
             <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
             <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
@@ -662,6 +697,8 @@
           <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
             <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
             <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
             <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
@@ -702,6 +739,8 @@
           <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
             <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
             <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
             <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
@@ -870,27 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/helper/DBConnectionSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/helper/DBManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/helper/InsertImageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/helper/Sceneloader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -915,18 +933,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/scene/sample.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1887" />
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/scene/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
+        <state relative-caret-position="884">
+          <caret line="169" column="5" lean-forward="true" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
             <element signature="method#btnNewOrderraportOA#0;class#Controller#0" />
             <element signature="method#btnNewCustomerOA#0;class#Controller#0" />
             <element signature="method#btnNewWorkerOA#0;class#Controller#0" />
             <element signature="method#btnNewDateOA#0;class#Controller#0" />
             <element signature="method#btnNewTravelingCostsOA#0;class#Controller#0" />
             <element signature="method#valueSave#0;class#Controller#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/helper/DBConnectionSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/helper/InsertImageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="method#insertImage#0;class#InsertImageTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/helper/DBManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="62" lean-forward="true" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+          <folding>
+            <element signature="method#ImageInsert#0;class#DBManager#0" />
+            <element signature="method#SelectImage#0;class#DBManager#0" />
+            <element signature="method#Select01#0;class#DBManager#0" />
+            <element signature="method#Select02#0;class#DBManager#0" />
+            <element signature="method#Insert1#0;class#DBManager#0" />
+            <element signature="method#Insert2#0;class#DBManager#0" />
+            <element signature="method#Delete#0;class#DBManager#0" />
+            <element signature="method#databaseupdaterichtigfalsch#0;class#DBManager#0" />
           </folding>
         </state>
       </provider>

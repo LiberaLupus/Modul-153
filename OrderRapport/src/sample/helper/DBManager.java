@@ -1,6 +1,7 @@
 package sample.helper;
 
 
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,51 @@ public class DBManager {
 
     public DBManager() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
     }
+
+    public void ImageInsert(String Sql, String Path){
+        PreparedStatement statement = null;
+        FileInputStream inputStream = null;
+
+        try {
+            File image = new File(Path);
+            inputStream = new FileInputStream(image);
+            statement = connection.conn.prepareStatement(Sql);
+            statement.setBinaryStream(1, (InputStream) inputStream, (int)(image.length()));
+            statement.executeUpdate();
+
+        } catch (FileNotFoundException e) {
+            System.out.println("FileNotFoundException: - " + e);
+        } catch (SQLException e) {
+            System.out.println("SQLException: - " + e);
+        } finally {
+
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                System.out.println("SQLException Finally: - " + e);
+            }
+
+        }
+    }
+
+    public BufferedInputStream SelectImage(String SQLQuery, String Attribut){
+        try{
+            Statement stmt = connection.conn.createStatement();
+            ResultSet rs = stmt.executeQuery(SQLQuery);
+            rs.next();
+            java.sql.Blob blob = rs.getBlob(Attribut);
+            InputStream in = blob.getBinaryStream();
+            BufferedInputStream image = new BufferedInputStream(in);
+            rs.close();
+            stmt.close();
+            return  image;
+        }catch (Exception ex){
+            System.out.println(ex);
+            return null;
+        }
+    }
+
+
 
 
     public List<Integer> Select01(String SQLQuery, String Attribut){
