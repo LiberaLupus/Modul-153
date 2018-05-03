@@ -1,3 +1,5 @@
+use orderrapportmanagement;
+
 insert into companies 
 	(company) 
 	values 
@@ -61,11 +63,9 @@ insert into people
 insert into contact
 	(tel, email, companiesFk, placesFk, zipFk, streetnamesFk, streetnrsFk, customerFk) 
 	values 
-    ("3312222323", "wer@ew.ch", 1, 2, 3, 4, 5, 1), 
-    ("0123103012", "asda@ad.asd", 2, 3, 4, 5, 1, 2),
-    ("8283040234", "afzqg@dhag.ch", 3, 4, 5, 1, 2, 3), 
-    ("6234252532", "Fdfgag.sfa@afgadf.sadf", 4, 5, 1, 2, 3, 4), 
-    ("9534523452", "er@er.er", 5, 1, 2, 3, 4, 5);
+    ("3312222323", "wer@ew.ch", 1, 2, 3, 4, 5, 2), 
+    ("0123103012", "asda@ad.asd", 2, 3, 4, 5, 1, 4),
+    ("8283040234", "afzqg@dhag.ch", 3, 4, 5, 1, 2, 5);
 
 insert into dates
 	(workingDay) 
@@ -80,30 +80,38 @@ insert into travelingCosts
 	(costs, km) 
     values 
     (36, 18),
-    (5, 10),
-    (25, 50),
-    (3, 6),
-    (27, 54);
+    (10, 5),
+    (50, 25),
+    (6, 3),
+    (54, 27);
 
 insert into orderRapport
-	(title, signature, datesFK, travelingCostsFk, customerFk, workerFk) 
+	(title, datesFK, travelingCostsFk, customerFk, workerFk) 
     values 
-    ();
+    ("ads", 1, 2, 2, 1),
+    ("sd", 2, 3, 4, 3),
+    ("sdf", 3, 4, 5, 1);
 
 insert into typesOfActivity
 	(type) 
     values 
-    (); -- varchar
+    ("Essen"),
+    ("Schlafen"),
+    ("Gehen");
 
 insert into textModules
 	(buildingBlock, typesOfActivityFk) 
     values 
-    (); -- varchar
+    ("uuuuu   uu  uuuuuu  uuuuuu uuuuuuuuu  uuuuu  uuuuu uuu  uuuuu  uuuuuu uuuuuuuuuuuu  uuuuuuuuuu  uuuuuuuu", 1),
+    ("sduabfuh auhdsf bubhf duhbf fdsa uhbifribhufdifd saibnh fdsaiuhsfd uibhf dhibf dasihuifashd ihfsuda udfd", 2),
+    ("ffffffffff f  f f  fffffffffff   fffffffffff fffff fffffffff  ffffffffff  ffff ffff fff ffffffffffffffff", 3);
 
 insert into activities
 	(note, costs, totalTime, FromTime, toTime, typesOfActivityFK, orderRapportFk) 
     values 
-    ();
+    ("asdafadfadfsdfgasgasd", 23, "1h 2min", '11:11:11', '12:12:12', 1, 1),
+    ("hsdghaedhghfsghjsgdsf", 53, "2h 4min", '13:13:13', '14:14:14', 2, 2),
+    ("jmhjsfghsrthsydthshgd", 64, "3h 8min", '15:15:15', '16:16:16', 3, 3);
 
 
     
